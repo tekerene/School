@@ -1,0 +1,78 @@
+ /***** About Us starts ******/
+
+  .banner_area {
+    position: relative;
+    background: url(../img/bg-img/bg1.jpg) no-repeat center center;
+    z-index: 1;
+    min-height: 392px;
+    padding-top: 0 !important;
+   }
+   .banner_area .banner_inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 392px;
+    z-index: 1; 
+  }
+  .banner_area .banner_inner .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 35, 71, 0.8);
+   }
+   .banner_area .banner_inner .banner_content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+   }
+   .banner_area .banner_inner .banner_content h2 {
+    color: #fff;
+    font-size: 45px;
+    margin-bottom: 0px;
+   }
+   .banner_area .banner_inner .banner_content .page_link {
+    display: inline-block;
+    padding: 7px 20px; 
+  }
+  .banner_area .banner_inner .banner_content .page_link a {
+    font-size: 15px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    margin-right: 20px;
+    position: relative;
+    text-transform: capitalize; 
+  }
+  .banner_area .banner_inner .banner_content .page_link a:before {
+    content: "/";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+   }
+  .banner_area .banner_inner .banner_content .page_link a:last-child {
+    margin-right: 0px;
+   }
+    .banner_area .banner_inner .banner_content .page_link a:last-child:before {
+      display: none; 
+    }
+    .banner_paragraph {
+      margin-top: 100px;  
+      font-size: 30px;   
+      text-align: center;                                                                                                        
+    }
+.banner_link i{
+    font-size: 33px;
+    margin-left: 10px;
+    font-weight: 900;
+}
+.banner_link i:hover{
+    font-size: 40px;
+    margin-left: 10px;
+    background-color: teal;
+    color: #fff;
+    font-weight: 800;
+}
+/*
+/***** About Us starts ******/   
