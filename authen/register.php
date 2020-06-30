@@ -127,7 +127,7 @@ $(document).ready(function() {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="<?php echo $username; ?>"/>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="<?php echo $username; ?>" required/>
 								</div>
 							</div>
 						</div>
@@ -137,7 +137,7 @@ $(document).ready(function() {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="<?php echo $email; ?>"/>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="<?php echo $email; ?>" required/>
 								</div>
 							</div>
 						</div>

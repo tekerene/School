@@ -73,7 +73,7 @@
 					<!-- Search Button -->
 					<div class="search-area">
 						<form action="#" method="post">
-							<input type="search" name="search" id="search" placeholder="Search">
+							<input type="search" name="search" id="search" placeholder="Search" req>
 							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 						</form>
 					</div>
@@ -100,11 +100,11 @@
   	<?php include('errors.php'); ?>
   	<div class="input-group">
   		<label>Username</label>
-  		<input type="text" name="username" >
+  		<input type="text" name="username" required>
   	</div>
   	<div class="input-group">
   		<label>Password</label>
-  		<input type="password" name="password">
+  		<input type="password" name="password" required>
   	</div>
   	<div class="input-group">
   		<button type="submit" class="btn" name="login_user">Login</button>
