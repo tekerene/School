@@ -20,6 +20,25 @@
 </head>
 
 <body>
+    <div class="content">
+        <!-- notification message -->
+        <?php if (isset($_SESSION['success'])) : ?>
+        <div class="error success" >
+            <h3>
+            <?php 
+                echo $_SESSION['success']; 
+                unset($_SESSION['success']);
+            ?>
+            </h3>
+        </div>
+        <?php endif ?>
+  
+      <!-- logged in user information -->
+      <?php  if (isset($_SESSION['username'])) : ?>
+          <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+          <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+          <?php endif ?>
+  </div>
     <!-- Preloader -->
     <div id="preloader">
         <div class="spinner"></div>
@@ -102,9 +121,10 @@
                         <!-- Register / Login -->
                         <div class="register-login-area">
                             <a href="#" class="btn">Register</a>
-                            <a href="index-login.html" class="btn active">Login</a>
+                            <a href="login.html" class="btn active">Login</a>
                         </div>
-    
+        
+        
                     </div>
                     <!-- Nav End -->
                 </div>
@@ -420,6 +440,7 @@
                 <div class="col-12">
                     <div class="load-more text-center wow fadeInUp" data-wow-delay="1000ms">
                         <a href="#" class="btn clever-btn btn-2">Load More</a>
+                        <a href="admin_login.html">Add Course</a>
                     </div>
                 </div>
             </div>
