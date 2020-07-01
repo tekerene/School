@@ -8,7 +8,7 @@ $(document).ready(function() {
 });
 </script>
 <!------ Include the above in your HEAD tag ---------->
-<?php include('server.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head> 
@@ -121,13 +121,13 @@ $(document).ready(function() {
 	            </div> 
 				<div class="main-login main-center">
 					<form class="form-horizontal" method="post" action="register.php">
-                    <?php include('errors.php'); ?>
+                    
 						<div class="form-group">
 							<label for="username" class="cols-sm-2 control-label">User Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="<?php echo $username; ?>" required/>
+									<input type="text" class="form-control" name="username" id="username"  placeholder="enter username" required/>
 								</div>
 							</div>
 						</div>
@@ -137,7 +137,7 @@ $(document).ready(function() {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="<?php echo $email; ?>" required/>
+									<input type="text" class="form-control" name="email" id="email"  placeholder="enter email" required/>
 								</div>
 							</div>
 						</div>
@@ -167,7 +167,7 @@ $(document).ready(function() {
 							<button type="button" name="reg_user" id="register" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register" >
-				            <a href="login.php">Login</a>
+				            <a href="login.html">Login</a>
 				         </div>
 					</form>
 				</div>
