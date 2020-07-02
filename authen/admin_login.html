@@ -2,113 +2,128 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin_login</title>
+  <title>Only AdminLogin</title>
   <link rel="stylesheet" type="text/css" href="../css/login.css">
   <link rel="stylesheet" href="../style.css">
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+
 </head>
-<body><header class="header-area">
+<body>
+	<header class="header-area">
 
-<!-- Top Header Area -->
-<div class="top-header-area d-flex justify-content-between align-items-center">
-	<!-- Contact Info -->
-	<div class="contact-info">
-		<a href="#"><span>Phone:</span> +237 697 303 266</a>
-		<a href="#"><span>Email:</span> info@sevicti.com</a>
-	</div>
-	<!-- Follow Us -->
-	<div class="follow-us">
-		<span>Follow us</span>
-		<a href="https://m.facebook.com/pages/category/school/See-Vision-Computer-Training-Institute-SEVICTI-270049650516785/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-		<a href="https://www.instagram.com/sevicti/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-		<a href="https://www.twitter.com/sevicti/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-	</div>
-</div>
-
-<!-- Navbar Area -->
-<div class="clever-main-menu">
-	<div class="classy-nav-container breakpoint-off">
-		<!-- Menu -->
-		<nav class="classy-navbar justify-content-between" id="cleverNav">
-
-			<!-- Logo -->
-			<div class="img-logo">
-			<a class="text-light nav-brand" href="../index.html">SEVICTI<img src="" alt=""></a>
+		<!-- Top Header Area -->
+		<div class="top-header-area d-flex justify-content-between align-items-center">
+			<!-- Contact Info -->
+			<div class="contact-info">
+				<a href="#"><span>Phone:</span> +237 697 303 266</a>
+				<a href="#"><span>Email:</span> info@sevicti.com</a>
 			</div>
-			<!-- Navbar Toggler -->
-			<div class="classy-navbar-toggler">
-				<span class="navbarToggler"><span></span><span></span><span></span></span>
+			<!-- Follow Us -->
+			<div class="follow-us">
+				<span>Follow us</span>
+				<a href="https://m.facebook.com/pages/category/school/See-Vision-Computer-Training-Institute-SEVICTI-270049650516785/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://www.instagram.com/sevicti/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+				<a href="https://www.twitter.com/sevicti/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 			</div>
+		</div>
 
-			<!-- Menu -->
-			<div class="classy-menu">
+		<!-- Navbar Area -->
+		<div class="clever-main-menu">
+			<div class="classy-nav-container breakpoint-off">
+				<!-- Menu -->
+				<nav class="classy-navbar justify-content-between" id="cleverNav">
 
-				<!-- Close Button -->
-				<div class="classycloseIcon">
-					<div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-				</div>
-
-				<!-- Nav Start -->
-				<div class="classynav">
-					<ul>
-						<li><a href="../index.html">Home</a></li>
-						<li><a href="#">Pages</a>
-							<ul class="dropdown">
-								<li><a href="../index.html">Home</a></li>
-								<li><a href="../courses.html">Courses</a></li>
-								<li><a href="../single-course.html">Single Courses</a></li>
-								<li><a href="../instructors.html">Instructors</a></li>
-								<li><a href="../blog.html">Blog</a></li>
-								<li><a href="../blog-details.html">Single Blog</a></li>
-								<li><a href="../regular-page.html">Regular Page</a></li>
-								<li><a href="../contact.html">Contact</a></li>
-							</ul>
-						</li>
-						<li><a href="../courses.html">Courses</a></li>
-						<li><a href="../instructors.html">Instructors</a></li>
-						<li><a href="../blog.html">Blog</a></li>
-						<li><a href="../contact.html">Contact</a></li>
-					</ul>
-
-					<!-- Search Button -->
-					<!-- <div class="search-area">
-						<form action="#" method="post">
-							<input type="search" name="search" id="search" placeholder="Search">
-							<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-						</form>
-					</div> -->
-
-					<!-- Register / Login -->
-					<div class="register-login-area">
-						<a href="#" id="register" class="btn">Register</a>
-						<a href="#" id="register" class="btn active">Login</a>
+					<!-- Logo -->
+					<div class="img-logo">
+					<a class="text-light nav-brand" href="../index.html">SEVICTI<img src="" alt=""></a>
+					</div>
+					<!-- Navbar Toggler -->
+					<div class="classy-navbar-toggler">
+						<span class="navbarToggler"><span></span><span></span><span></span></span>
 					</div>
 
-				</div>
-				<!-- Nav End -->
+					<!-- Menu -->
+					<div class="classy-menu">
+
+						<!-- Close Button -->
+						<div class="classycloseIcon">
+							<div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+						</div>
+
+						<!-- Nav Start -->
+						<div class="classynav">
+							<ul>
+								<li><a href="../index.html">Home</a></li>
+								<li><a href="#">Pages</a>
+									<ul class="dropdown">
+										<li><a href="../index.html">Home</a></li>
+										<li><a href="../courses.html">Courses</a></li>
+										<li><a href="../single-course.html">Single Courses</a></li>
+										<li><a href="../instructors.html">Instructors</a></li>
+										<li><a href="../blog.html">Blog</a></li>
+										<li><a href="../blog-details.html">Single Blog</a></li>
+										<li><a href="../regular-page.html">Regular Page</a></li>
+										<li><a href="../contact.html">Contact</a></li>
+									</ul>
+								</li>
+								<li><a href="../courses.html">Courses</a></li>
+								<li><a href="../instructors.html">Instructors</a></li>
+								<li><a href="../blog.html">Blog</a></li>
+								<li><a href="../contact.html">Contact</a></li>
+							</ul>
+
+							<!-- Search Button -->
+							<!-- <div class="search-area">
+								<form action="#" method="post">
+									<input type="search" name="search" id="search" placeholder="Search">
+									<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+								</form>
+							</div> -->
+
+							<!-- Register / Login -->
+							<div class="register-login-area">
+								<a href="#" id="register" class="btn">Register</a>
+								<a href="#" id="register" class="btn active">Login</a>
+							</div>
+
+						</div>
+						<!-- Nav End -->
+					</div>
+				</nav>
 			</div>
-		</nav>
-	</div>
-</div>
-</header>
-<!-- ##### Header Area End ##### -->
+		</div>
+	</header>
+	<!-- ##### Header Area End ##### -->
   <div class="header">
-  	<h2>Admin_Login</h2>
+  	<h2>Login</h2>
   </div>
 	 
-  <form method="post" action="login.php">
-  	
+  <form method="post" action="">
+  
   	<div class="input-group">
-  		<label>Username</label>
-  		<input type="text" name="username" >
+  		<label>Username or email</label>
+  		<input type="text" id="email" name="username" required>
   	</div>
   	<div class="input-group">
   		<label>Password</label>
-  		<input type="password" name="password">
+  		<input type="password" id="password" name="password" required>
   	</div>
   	<div class="input-group">
-  		<button type="submit" class="btn" name="login_user">Login</button>
+  		<button type="submit" class="btn" id="login-user" name="login_user">Login</button>
   	</div>
-  	>
+  	<p>
+  		Not yet a member? <a href="register.html">Sign up</a>
+  	</p>
   </form>
       <!-- ##### Footer Area Start ##### -->
 	  <footer class="footer-area">
@@ -147,6 +162,26 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
-    <!-- ##### Footer Area End ##### -->
+	<!-- ##### Footer Area End ##### -->
+	<!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="../js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="../js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="../js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="../js/active.js"></script>
+	<script src="../js/auth.js"></script>
+	<script>
+		firebase.auth().onAuthStateChanged(function(user){
+			if(user){
+				window.location.href = "admin.html";
+			}
+		})
+	</script>
+	
 </body>
 </html>
