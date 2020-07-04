@@ -5,9 +5,10 @@
 <html>
 <head>
   <title>Sevicti Login </title>
-  <link rel="stylesheet" type="text/css" href="../css/login.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../css/login.css"> -->
   <link rel="stylesheet" href="../style.css">
-  <!-- <link rel="stylesheet" href="../css/studLogin.css"> -->
+  <link rel="stylesheet" href="../design_files/css/style.css">
+  
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
@@ -115,7 +116,7 @@
 	<!-- ##### Header Area End ##### -->
 	
 	<body>
-	<div class="container">
+	<!-- <div class="container">
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
 				<div class="card-header">
@@ -159,8 +160,43 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
+	<div class="wrapper" style="background-image: url('../design_files/images/loginback.jpg')">
+
+   
+		<div class="inner">
+			<div class="image-holder">
+				<img src="../design_files/images/login.jpg" alt="">
+			</div>
+			<form action="">
+				<h3>Login</h3>
+				<div class="form-wrapper">
+					<input type="text" name="email" id="email" placeholder="email address" class="form-control">
+					<i class="zmdi zmdi zmdi-email"></i>
+				</div>
+				<div class="form-wrapper">
+					<input type="password" name="password" id="password" placeholder="password" class="form-control">
+					<i class="zmdi zmdi zmdi-lock"></i>
+				</div>
+				
+				<div class="form-group container-login100-form-btn">
+					<button type="button" id="login-user">Login
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</div>
+				<div class="w-full text-center p-t27 p-b-239">
+				   <span class="text-muted">
+						forgot
+				   </span>
+				   <a href="forgetPassword.html" class="text-dark">username / password</a>
+					</div>
+				<div class="w-full text-center" style="margin-top: 31%; font-size: 15px;">
+				<a href="register.html" class="text-dark"> Not have an account? Signup</a>
+				</div>
+					</form>
+		</div>
+	</div>
 
   <!-- ##### Footer Area Start ##### -->
   <footer class="footer-area">
@@ -203,9 +239,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
 <script src="../js/jquery/jquery-2.2.4.min.js"></script>
-<script src="../js/bootstrap/popper.min.js"></script>
+<!-- <script src="../js/bootstrap/popper.min.js"></script> -->
 <!-- Bootstrap js -->
-<script src="../js/bootstrap/bootstrap.min.js"></script>
+<!-- <script src="../js/bootstrap/bootstrap.min.js"></script> -->
 <!-- All Plugins js -->
 <script src="../js/plugins/plugins.js"></script>
 <!-- Active js -->
@@ -214,7 +250,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script>
 	firebase.auth().onAuthStateChanged(function(user){
 		if(user){
-			window.location.href = "home.html";
+			window.location.href = "../courses.html";
 		}
 	});
 </script>

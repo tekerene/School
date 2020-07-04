@@ -32,3 +32,63 @@ var firebaseConfig = {
           window.alert('Please fill out the required fields')
       }
   });
+  
+  // BACKEND CODE TO SIGNUP NEW USER to have admin access
+  $("#signup").click(function()
+  {
+    var username = $("#username").val();
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var cPassword = $("#confirmPassword").val();
+
+    if(username != "" && email != "" && password != "" && cPassword != "") {
+        
+      if(password == cPassword){
+        var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+
+        result.catch(function(error){
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+            window.alert("message :" + errorMessage);
+        });
+      
+    } else {
+        window.alert("Passwords do not match");
+      }
+    } 
+    else{
+      window.alert("form is incomplete, Please fill out all the fields");
+  
+    }
+  });
+
+
+
+//  BACKEND CODE TO RESET PASSWORD
+  $("#btn-resetPassword").click(function(){
+    var auth = firebase.auth();
+    var email = $('#email').val();
+
+    if(email != "") 
+    {
+      auth.sendPasswordResetEmail(email).then(function()
+      {
+        window.alert("Email has been sent to your email, Please check and verify ");
+      })
+      .catch(function(error){
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+        window.alert('Message '+ errorMessage);
+      })
+    } else {
+      window.alert("Please write your email first. ");
+    }
+});
+// TO LOGOUT USER
+  $("#btn-logout").click(function(){
+      firebase.auth().signOut();
+  });

@@ -112,33 +112,7 @@
 		</div>
 	</header>
 	<!-- ##### Header Area End ##### -->
-<!-- <div class="container">
 
-	
-  <div class="header">
-  	<h2>Login</h2>
-  </div>
-	 
-  <form method="post" action="">
-  
-  	<div class="input-group">
-  		<label>Username or email</label>
-  		<input type="text" id="email" name="username" required>
-  	</div>
-  	<div class="input-group">
-  		<label>Password</label>
-  		<input type="password" id="password" name="password" required>
-  	</div>
-  	<div class="input-group">
-  		<button type="submit" class="btn" id="login-user" name="login_user">Login</button>
-  	</div>
-  	<p>
-  		Not yet a member? <a href="register.html">Sign up</a>
-  	</p>
-  </form>
-  </div>	 -->
-
-  
 	<div class="container">
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
@@ -223,15 +197,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
-	<!-- ##### Footer Area End ##### -->
-	<!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <!-- <script src="../js/jquery/jquery-2.2.4.min.js"></script> -->
-    <!-- Popper js -->
-    <!-- <script src="../js/bootstrap/popper.min.js"></script> -->
-    <!-- Bootstrap js -->
-    <!-- <script src="../js/bootstrap/bootstrap.min.js"></script> -->
-    <!-- All Plugins js -->
+	
     <script src="../js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="../js/active.js"></script>
@@ -239,7 +205,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script>
 		firebase.auth().onAuthStateChanged(function(user){
 			if(user){
-				window.location.href = "../admin_theme/course.html";
+				window.location.href = "mainHome.html";
 			}
 		})
 	</script>

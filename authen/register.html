@@ -14,7 +14,7 @@
 		<!-- Website CSS style -->
         <link rel="stylesheet" type="text/css" href="../css/register.css">
         <link rel="stylesheet" href="../style.css">
-
+        
 		<!-- Website Font style -->
 	    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
 		
@@ -33,7 +33,12 @@
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
-	</head>
+    
+<!--bootstrap css & js, juery   -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
 	<body>
         <header class="header-area">
 
@@ -150,27 +155,27 @@
 
 
 						<div class="form-group">
-							<label for="password-1" class="cols-sm-2 control-label">Password</label>
+							<label for="password" class="cols-sm-2 control-label">Password</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password_1" id="password-1"  placeholder="Enter your Password" required>
+									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" required>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="password_2" class="cols-sm-2 control-label">Confirm Password</label>
+							<label for="comfirmPassword" class="cols-sm-2 control-label">Confirm Password</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password_2" id="password_2"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="confirmPassword" id="confirmPassword"  placeholder="Confirm your Password"/>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group ">
-							<button type="button" name="reg_user" id="register" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="button" name="signup" id="signup" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register" >
 				            <a href="login.html">Login</a>
@@ -178,7 +183,9 @@
 					</form>
 				</div>
 			</div>
-		</div>
+        </div>
+        
+        
          <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <!-- Top Footer Area -->
@@ -223,17 +230,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- jQuery-2.2.4 js -->
     <script src="../js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
-    <script src="../js/bootstrap/popper.min.js"></script>
+    <!-- <script src="../js/bootstrap/popper.min.js"></script> -->
     <!-- Bootstrap js -->
-    <script src="../js/bootstrap/bootstrap.min.js"></script>
+    <!-- <script src="../js/bootstrap/bootstrap.min.js"></script> -->
     <!-- All Plugins js -->
     <script src="../js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="../js/active.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#register').attr("disabled", true);
-        });
+    <script src="js/auth.js"></script>
+    
+        <script>
+            firebase.auth().onAuthStateChanged(function(user){
+                if(user){
+                    window.location.href = "login.html";
+                }
+            });
         </script>
 	</body>
 </html>
