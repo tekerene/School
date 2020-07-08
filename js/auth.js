@@ -88,7 +88,53 @@ var firebaseConfig = {
       window.alert("Please write your email first. ");
     }
 });
+
+
 // TO LOGOUT USER
   $("#btn-logout").click(function(){
       firebase.auth().signOut();
   });
+
+   // TO UPDATE AND SET USER Account
+   $("#btn-update").click(function(){
+    var phone = $("#phone").val();
+    var address = $("#address").val();
+    var bio = $("#bio").val();
+    var fName = $("#firstName").val();
+    var sName = $("#secondName").val();
+    var country = $("#country").val();
+    var gender = $("#gender").val();
+  var rootRef = firebase.database().ref().child("users");
+  var userID = firebase.auth().currentUser.uid;
+  var usersRef = rootRef.child(userID);
+ 
+     if(fName !="" && sName !="" && phone != "" && bio !="" && address !="" && country != "" && gender !="")
+     {
+       var userData = 
+       {
+         "phone": phone,
+         "address": address,
+         "secondName": sName,
+         "FirstName": fName,
+         "gendere": gender,
+         "bio": bio,
+         "country": country,
+       };
+       usersRef.set(userData, function(error)
+       {
+           if(error) {
+         var errorCode = error.code;
+         var errorMessage = error.message;
+ 
+         console.log(errorCode);
+         console.log(errorMessage);
+ 
+         window.alert('Message '+ errorMessage);
+           } else {
+             window.location.href = "";
+           }
+       })
+     } else {
+       window.alert("Form is incomplete, Please fill in all the fields")
+     }
+ });

@@ -198,44 +198,7 @@
 		</div>
 	</div>
 
-  <!-- ##### Footer Area Start ##### -->
-  <footer class="footer-area">
-	<!-- Top Footer Area -->
-	<div class="top-footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<!-- Footer Logo -->
-					<div class="footer-logo">
-						<a href="index.html">Sevicti<img src="" alt=""></a>
-					</div>
-					<!-- Copywrite -->
-					<p><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<!-- Bottom Footer Area -->
-	<div class="bottom-footer-area d-flex justify-content-between align-items-center">
-		<!-- Contact Info -->
-		<div class="contact-info">
-			<a href="#"><span>Phone:</span> +237 678 303 0266</a>
-			<a href="#"><span>Email:</span> info@sevicti.com</a>
-		</div>
-		<!-- Follow Us -->
-		<div class="follow-us">
-			<span>Follow us</span>
-			<a href="https://m.facebook.com/pages/category/school/See-Vision-Computer-Training-Institute-SEVICTI-270049650516785/"><i
-					class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="https://www.instagram.com/sevictinstitute/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-			<a href="https://www.twitter.com/sevictinstitute/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-		</div>
-	</div>
-</footer>
-<!-- ##### Footer Area End ##### -->
 <!-- ##### All Javascript Script ##### -->
 <!-- jQuery-2.2.4 js -->
 <script src="../js/jquery/jquery-2.2.4.min.js"></script>
@@ -249,10 +212,21 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../js/auth.js"></script>
 <script>
 	firebase.auth().onAuthStateChanged(function(user){
-		if(user){
-			window.location.href = "../courses.html";
-		}
-	});
-</script>
+		 if(user)
+		 {
+			 var userID = firebase.auth().currentUser.uid;
+			 firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
+			 {
+				 if(snapshot.val())
+				 {
+					 window.location.href = "../index-login.html";
+				 } else {
+					  window.location.href = "accountSettings.html";
+				 }
+			 })
+			
+		 }
+	 });
+ </script>
 </body>
 </html>

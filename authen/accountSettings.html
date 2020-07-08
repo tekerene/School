@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+        
+
+        <title>Add a Title here</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+     
+        <!-- MATERIAL DESIGN ICONIC  -->
+                
+        <link rel="stylesheet" href="../design_files/">
+                 <!-- STYLE CSS -->
+        <link rel="stylesheet" href="../design_files/css/style.css">
+
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+</head>
+<body>
+    <div class="wrapper" style="background-image: url('../design_files/images/accountSettingsback.jpg')">
+
+   
+    <div class="inner">
+        <div class="image-holder">
+            <img src="../design_files/images/asettings.jpg" alt="">
+        </div>
+        <form action="">
+            <h3>Account Settings</h3>
+            <div class="form-group">
+                <input type="text" id="firstName" placeholder="first Name" class="form-control" required>
+                <input type="text" id="secondName" placeholder="second Name" class="form-control" required>
+            </div>
+
+            <div class="form-wrapper">
+             <select name="" id="country" class="form-control">
+                 <option value="" disabled selected>Country</option>
+                 <option value="cameroon">cameroon</option>
+                 <option value="nigeria">nigeria</option>
+                 <option value="ghana">ghana</option>
+                 <option value="south africa">south africa</option>
+                 <option value="kenya">kenya</option>
+                 <option value="india">india</option>
+                 <option value="usa">usa</option>
+                
+             </select>
+             <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+            </div>
+
+
+
+
+            <div class="form-wrapper">
+                <input type="number" id="phone" placeholder="Phone" class="form-control" required>
+                <i class="zmdi zmdi-tablet-mac"></i>
+            </div>
+            <div class="form-wrapper">
+                <select name="" id="gender" class="form-control">
+                    <option value="" disabled selected>Gender</option>
+                    <option value="male">male</option>
+                    <option value="female">female</option>
+                    <option value="others">others</option>
+                    
+                </select>
+                <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+               </div>
+
+               <div class="form-wrapper">
+                <input type="text" id="address" placeholder="Address" class="form-control" required>
+                <i class="zmdi zmdi-pin"></i>
+            </div>
+
+            <div class="form-wrapper">
+                <input type="text" id="bio" placeholder="bio" class="form-control" required>
+                <i class="zmdi zmdi-account-box-mail"></i>
+            </div>
+
+
+            <div class="form-group container-login100-form-btn">
+                <button type="button" id="btn-update">Update & Set
+                    <i class="zmdi zmdi-arrow-right"></i>
+                </button>
+            </div>
+          
+                </form>
+    </div>
+</div>
+<script src="js/auth.js"></script>
+<script>
+    firebase.auth().onAuthStateChanged(function(user){
+        if(user)
+        {
+            var userID = firebase.auth().currentUser.uid;
+            firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
+            {
+                if(snapshot.val())
+                {
+                    window.location.href = "../index.html";
+                } 
+            })
+           
+        }
+    });
+</script>
+</body>
+</html>
