@@ -313,21 +313,20 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
 
         //  *********************** RETRIEVE AND DISPLAY DATA FROM FIREBASE ***************************
         var firebaseConfig = {
-            apiKey: "AIzaSyD0zUglG_zdxnjscusHv1Up7gzxOeyx3AY",
-            authDomain: "fir-blog-app-fc145.firebaseapp.com",
-            databaseURL: "https://fir-blog-app-fc145.firebaseio.com",
-            projectId: "fir-blog-app-fc145",
-            storageBucket: "fir-blog-app-fc145.appspot.com",
-            messagingSenderId: "1080432488728",
-            appId: "1:1080432488728:web:a09f8768b50f4840feee6d",
-            measurementId: "G-82B8DCK8R0"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        //   firebase.analytics();
+    apiKey: "AIzaSyDi7GpvzEDSU1cUHYQzId9paJ4Egda4RZQ",
+    authDomain: "sevicti-fba28.firebaseapp.com",
+    databaseURL: "https://sevicti-fba28.firebaseio.com",
+    projectId: "sevicti-fba28",
+    storageBucket: "sevicti-fba28.appspot.com",
+    messagingSenderId: "483945013504",
+    appId: "1:483945013504:web:ee3974f3ec5be8796c13e5",
+    measurementId: "G-5ZHXEL8H1B"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
-        firebase.auth.Auth.Persistence.LOCAL;
-    
+  firebase.auth.Auth.Persistence.LOCAL;
 
                 var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
                 dbBlogs.on("value", function(blogs)
