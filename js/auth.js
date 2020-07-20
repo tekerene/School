@@ -104,9 +104,12 @@ var firebaseConfig = {
     var sName = $("#secondName").val();
     var country = $("#country").val();
     var gender = $("#gender").val();
+
+    
   var rootRef = firebase.database().ref().child("users");
   var userID = firebase.auth().currentUser.uid;
   var usersRef = rootRef.child(userID);
+
  
      if(fName !="" && sName !="" && phone != "" && bio !="" && address !="" && country != "" && gender !="")
      {
@@ -131,10 +134,21 @@ var firebaseConfig = {
  
          window.alert('Message '+ errorMessage);
            } else {
-             window.location.href = "";
+             window.location.href = "../index-login.html";
            }
        })
      } else {
        window.alert("Form is incomplete, Please fill in all the fields")
      }
  });
+
+ function switchView(view)
+{
+  $.get({
+    url:view,
+    cache:false,
+  })
+  .then(function(data){
+    $("#container").html(data);
+  })
+}

@@ -136,3 +136,14 @@ var usersRef = rootRef.child(userID);
      window.alert("Form is incomplete, Please fill in all the fields")
    }
 });
+
+function switchView(view)
+{
+  $.get({
+    url:view,
+    cache:false,
+  })
+  .then(function(data){
+    $("#container").html(data);
+  })
+}

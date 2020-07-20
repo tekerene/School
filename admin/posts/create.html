@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script> -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-  <!-- firebase -->
-  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
-  <!-- Font Awesome -->
+         <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="../../css/adminstyle.css">
-
+ 
   <!-- Admin Styling -->
   <link rel="stylesheet" href="../../css/admin.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+ 
+   <!-- firebase -->
+   <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+   <!-- TODO: Add SDKs for Firebase products that you want to use
+https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+ <!-- --------   Blog Post Area ------------ -->
 
-  <title>Admin - Create Post</title>
 </head>
-
 <body>
-
-  <!-- header -->
-  <header class="clearfix">
+   <!-- header -->
+   <header class="clearfix">
     <div class="logo">
       <!-- <img src="images/logo-placeholder.png" alt="Logo"> -->
     </div>
@@ -41,6 +39,8 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
     <nav>
       <ul>
         <li><a href="../../index.html">Home</a></li>
+        <li><a onclick="switchView('../../blog.html')"> All Blogs</a></li>
+        <li><a onclick="switchView('./index.html')">index</a></li>
         <li>
           <a href="#" class="userinfo">
             <i class="fa fa-user"></i>
@@ -56,344 +56,263 @@ https://firebase.google.com/docs/web/setup#available-libraries -->
     </nav>
   </header>
   <!-- // header -->
+ <div class="jumbotron bg-dark" style="margin-top: 15px;">
+    <script>
+        var counter = 0;
+    </script>
+    <div class="container text-center">
+        <form id="main-form">
 
-  <div class="admin-wrapper clearfix">
-    <!-- Left Sidebar -->
-    <div class="left-sidebar">
-      <ul>
-        <li><a href="index.html">Manage Posts</a></li>
-        <li><a href="../topics/index.html">Manage Topics</a></li>
-        <li><a href="../users/index.html">Manage Users</a></li>
-      </ul>
-    </div>
-    <!-- // Left Sidebar -->
+            <div class="form-group">
+                <input type="text" name="title" class="form-control" id="title" placeholder="Blog Title">
+                <div class="invalid-feedback">Please write some text for title.</div>
+            </div>
+            <div class="form-group">
+                <textarea type="text" name="main-desc" class="form-control" id="main-desc" rows="5" placeholder="Description"></textarea>
+                <div class="invalid-feedback">Please write some description first.</div>
+            </div>
+            <div class="form-group">
+                
+                <input type="file" class="form-control" id="main-image">
+                <div class="invalid-feedback">Please choose a vilid picture.</div>
+            </div>
+            <div class="form-group">
+                <img width="250" height="150" src="#" id="selected-image">
+            </div>
+            <div class="form-group">
+                <div class="progress bg-secondary">
 
-    Admin Content
-    <div class="admin-content clearfix">
-      <div class="button-group">
-        <a href="create.html" class="btn btn-sm">Add Post</a>
-        <a href="index.html" class="btn btn-sm">Manage Posts</a>
-      </div>
-      <div class="">
-        <h2 style="text-align: center;">Create Post</h2>
-
-        <form action="create.html" method="post">
-          <div class="input-group">
-            <label>Title</label>
-            <input type="text" name="title" class="text-input">
-          </div>
-          <div class="input-group">
-            <label>Body</label>
-            <textarea class="text-input" name="body" id="body"></textarea>
-          </div>
-          <div class="input-group">
-            <label>Topic</label>
-            <select class="text-input" name="topic">
-              <option>Life</option>
-              <option>Poetry</option>
-              <option>Inspiration</option>
-              <option>Life Lessons</option>
-            </select>
-          </div>
-          <div class="input-group">
-            <label>
-              <input type="checkbox" name="publish" /> Publish
-            </label>
-          </div>
-          <div class="input-group">
-            <button type="submit" name="save-post" class="btn">Save Post</button>
-          </div>
-        </form>
-
-      </div>
-    </div>
-    <!-- // Admin Content -->
-
-  </div>
-  <div class="container" id="container">
-    <!-- --------   Blog Post Area ------------ -->
-        <div class="jumbotron bg-dark" style="margin-top: 15px;">
-            <script>
-                var counter = 0;
-            </script>
-            <div class="container text-center">
-                <form id="main-form">
-                    <div class="form-group">
-                        <textarea type="text" name="main-desc" class="form-control" id="main-desc" rows="5" placeholder="Description"></textarea>
-                        <div class="invalid-feedback">Please write some description first.</div>
-                    </div>
-                    <div class="form-group">
-                        
-                        <input type="file" class="form-control" id="main-image">
-                        <div class="invalid-feedback">Please choose a vilid picture.</div>
-                    </div>
-                    <div class="form-group">
-                        <img width="250" height="150" src="#" id="selected-image">
-                    </div>
-                    <div class="form-group">
-                        <div class="progress bg-secondary">
-
-                            <div class="progress-bar bg-success" id="upload-progress" style="width: 0%;">0%</div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button id="save-blog" type="button" style="width: 150px; height: 60px;" class="btn btn-light bg-light text-dark">Post</button>
-                    </div>
-                </form>
-                <div id="result">
-
+                    <div class="progress-bar bg-success" id="upload-progress" style="width: 0%;">0%</div>
                 </div>
             </div>
-        </div>
-    <!-- --------   Blog Post Area ends ------------ -->
-
-    <!-- after blog post area -->
-    <hr>
-    <br><br><br>
-    <div class="text-center bg-light text-dark">
-        <h3>ALL New Blogs</h3>
-    </div>
-
-    <hr>
-    <hr>
-
-    <div class="row container-fluid bg-3">
-        <div class="col-sm-12" id="blogs">
+            <div class="form-group">
+                <button id="save-blog" type="button" style="width: 150px; height: 60px;" class="btn btn-light bg-light text-dark">Post</button>
+            </div>
+        </form>
+        <div id="result">
 
         </div>
-
     </div>
-    <br>
-        <!-- after blog post area ends-->
-        
-
-        <!-- validation and uploading of Post blogs -->
-        <script>
-            var validImagetypes = ["image/gif", "image/jpeg", "image/png"];
-            $("#selected-image").hide();
-            function previewImage(image_blog)
-            {
-               if(image_blog.files && image_blog.files[0])
-               {
-                var reader = new FileReader();
-
-            reader.onload = function(e)
-            {
-                $("#selected-image").attr("src", e.target.result);
-                $("#selected-image").fadeIn();
-            }
-            reader.readAsDataURL(image_blog.files[0]);
-            // $("#selected-image").show();
-               }
-            }
-
-
-            $("#main-image").change(function(){
-                previewImage(this);
-
-            });
-            $("#save-blog").click(function()
-            {
-                $("#main-desc").removeClass("is-invalid");
-                $("#main-image").removeClass("is-invalid");
-
-                var desc = $("#main-desc").val();
-                var picture = $("#main-image").prop("files")[0];
-
-                if(!desc){
-                    $("#main-desc").addClass("is-invalid");
-                    return;
-                }
-                if(picture == null)
-                {
-                    $("#main-image").addClass("is-invalid");
-                    return;
-                }
-                if($.inArray(picture["type"], validImagetypes)<0)
-                {
-                    $("#main-image").addClass("is-invalid");
-                    return;
-                }
-
-
-                // ******************* Upload and Save to Firebase Storage and Firrbase Database
-            var databaseRef = firebase.database().ref().child("Blogs");
-
-            databaseRef.once("value").then(function(snapshot)
-            {
-                var name = picture["name"];
-                var dataStr = new Date().getTime();
-                var fileCompleteName = name + "_" + dataStr;
-
-                var storageRef = firebase.storage().ref("Blog images");
-                var blogStorageRef = storageRef.child(fileCompleteName);
-
-                var uploadTask = blogStorageRef.put(picture);
-
-                uploadTask.on("state_changed",
-
-                    function progress(snapshot)
-                    {
-                        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-
-                        $("#upload-progress").html(Math.round(percentage) + "%");
-                        $("#upload-progress").attr("style", "width:" + percentage + "%");
-                    },
-                    function error(err)
-                     {
-
-
-                    },
-                    function complete()
-                    {
-                        var user = firebase.auth().currentUser;
-                        var userName;
-                        firebase.database().ref('Users/' + user.uid).once('value').then(function(snapshot)
-                        {
-                            var fName = (snapshot.val() && snapshot.val().firstName);
-                            var sName = (snapshot.val() && snapshot.val().secondName);
-
-                            userName = fName + " " + sName;
-                        });
-                        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadUrl)
-                        {
-                            var time = new Date();
-
-                            var options = 
-                            {
-                                weekday: "long",
-                                month: "long",
-                                day: "2-digit",
-                                year: "numeric",
-
-                            };
-                            var blogData = 
-                            {
-                                "image": downloadUrl,
-                                "name": fileCompleteName,
-                                "desc": desc,
-                                "uid": user.uid,
-                                "counter": 5000 - counter,
-                                "userName": userName,
-                                "time": time.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true}),
-                                "date": time.toLocaleDateString('en-US', options),                         
-                                };
-                                var newPostRef = databaseRef.push();
-                                
-                                newPostRef.set(blogData, function(err)
-                                {
-                                    if(err) 
-                                    {
-                                        $("#result").attr("class", "alert alert-danger");
-                                        $("#result").html(err.message);
-
-                                    } 
-                                    else 
-                                    {
-                                        $("#result").attr("class", "alert alert-success");
-                                        $("#result").html("blog uploaded successfully");
-
-                                        window.open("", "_self");
-                                    }
-                                    resetForm();
-                                });
-                        });
-                    }
-                );
-            });
-// ******************* Upload and Save to Firebase Storage and Firrbase Database
-         });
-
-         function resetForm()
-         {
-            $("#main-form")[0].reset();
-            $("#selected-image").fadeOut();
-            $("#upload-progress").html("Completed");
-         }
-
-        //  *********************** RETRIEVE AND DISPLAY DATA FROM FIREBASE ***************************
-        var firebaseConfig = {
-    apiKey: "AIzaSyDi7GpvzEDSU1cUHYQzId9paJ4Egda4RZQ",
-    authDomain: "sevicti-fba28.firebaseapp.com",
-    databaseURL: "https://sevicti-fba28.firebaseio.com",
-    projectId: "sevicti-fba28",
-    storageBucket: "sevicti-fba28.appspot.com",
-    messagingSenderId: "483945013504",
-    appId: "1:483945013504:web:ee3974f3ec5be8796c13e5",
-    measurementId: "G-5ZHXEL8H1B"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
-  firebase.auth.Auth.Persistence.LOCAL;
-
-                var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
-                dbBlogs.on("value", function(blogs)
-                {
-                    if(blogs.exists()){
-                        var blogsHtml = "";
-
-                        blogs.forEach(function(singleBlog){
-                            counter = counter + 1;
-
-                            blogsHtml += "<div class='jumbotron bg-light text-dark border border-dark'>";
-                                blogsHtml += "<div> <img class='img-fluid' width='900px' height='550' src='";
-                                    blogsHtml += singleBlog.val().image;
-                                blogsHtml += "'/> </div> <br>";
-
-                                blogsHtml += "<div class='row'>";
-                                    blogsHtml += "<div class='col-sm-5'> <p style='color:grey;'>"
-                                                + "Publised by: " + singleBlog.val().userName
-                                                + "</p> </div>" +
-
-                                                "<div class='col-sm-3'> <p style='color:grey;'>"
-                                                + "Time: " + singleBlog.val().time
-                                                + "</p> </div>" +
-                                                 
-                                                "<div class='col-sm-4'> <p style='color:grey; margin-left:45px'>"
-                                                + "Date: " + singleBlog.val().date
-                                                + "</p> </div>"
-                                                         ;
-                                blogsHtml += "</div> <br>";
-                                blogsHtml += "</div> <br>";
-                                blogsHtml += "<div style='text-aligh: justify; color: black;'>";
-                                    blogsHtml += singleBlog.val().desc;
-                                blogsHtml += "</div> <br>";
-                             blogsHtml += "</div>"
-                        });
-
-                        $("#blogs").html(blogsHtml);
-                    }
-                });
-        //  ***********************ENDS HERE-- RETRIEVE AND DISPLAY DATA FROM FIREBASE ***************************
-        </script>
-        <!-- validation and uploading of Post blogs ends -->
-     </div>
 </div>
+<!-- --------   Blog Post Area ends ------------ -->
+
+<!-- after blog post area -->
+<hr>
+<br><br><br>
+<div class="text-center bg-light text-dark">
+<h3>ALL New Blogs</h3>
 </div>
 
+<hr>
+<hr>
+
+<div class="row container-fluid bg-3">
+<div class="col-sm-12" id="blogs">
+
+</div>
+
+</div>
+<br>
+<!-- after blog post area ends-->
+
+
+<!-- validation and uploading of Post blogs -->
 <script>
-firebase.auth().onAuthStateChanged(function(user){
-if(!user){
-window.location.href = "signin.html";
-}
-})
+    var validImagetypes = ["image/gif", "image/jpeg", "image/png"];
+    $("#selected-image").hide();
+    function previewImage(image_blog)
+    {
+       if(image_blog.files && image_blog.files[0])
+       {
+        var reader = new FileReader();
+
+    reader.onload = function(e)
+    {
+        $("#selected-image").attr("src", e.target.result);
+        $("#selected-image").fadeIn();
+    }
+    reader.readAsDataURL(image_blog.files[0]);
+    // $("#selected-image").show();
+       }
+    }
+
+
+    $("#main-image").change(function(){
+        previewImage(this);
+
+    });
+    $("#save-blog").click(function()
+    {
+        $("#title").removeClass("is-invalid");
+        $("#main-desc").removeClass("is-invalid");
+        $("#main-image").removeClass("is-invalid");
+        
+        
+        var title = $('#title').val();
+        var desc = $("#main-desc").val();
+        var picture = $("#main-image").prop("files")[0];
+
+        if(!title){
+            $("#title").addClass("is-invalid");
+            return;
+        }
+
+        if(!desc){
+            $("#main-desc").addClass("is-invalid");
+            return;
+        }
+
+        if(picture == null)
+        {
+            $("#main-image").addClass("is-invalid");
+            return;
+        }
+
+        if($.inArray(picture["type"], validImagetypes)<0)
+        {
+            $("#main-image").addClass("is-invalid");
+            return;
+        }
+
+
+        // ******************* Upload and Save to Firebase Storage and Firrbase Database
+    var databaseRef = firebase.database().ref().child("Blogs");
+
+    databaseRef.once("value").then(function(snapshot)
+    {
+        var name = picture["name"];
+        var dataStr = new Date().getTime();
+        var fileCompleteName = name + "_" + dataStr;
+
+        var storageRef = firebase.storage().ref("Blog images");
+        var blogStorageRef = storageRef.child(fileCompleteName);
+
+        var uploadTask = blogStorageRef.put(picture);
+
+        uploadTask.on("state_changed",
+
+            function progress(snapshot)
+            {
+                var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+                $("#upload-progress").html(Math.round(percentage) + "%");
+                $("#upload-progress").attr("style", "width:" + percentage + "%");
+            },
+            function error(err)
+             {
+
+
+            },
+            function complete()
+            {
+                var user = firebase.auth().currentUser;
+                var userName;
+                firebase.database().ref('Users/' + user.uid).once('value').then(function(snapshot)
+                {
+                    var fName = (snapshot.val() && snapshot.val().firstName);
+                    var sName = (snapshot.val() && snapshot.val().secondName);
+
+                    userName = fName + " " + sName;
+                });
+                uploadTask.snapshot.ref.getDownloadURL().then(function(downloadUrl)
+                {
+                    var time = new Date();
+
+                    var options = 
+                    {
+                        weekday: "long",
+                        month: "long",
+                        day: "2-digit",
+                        year: "numeric",
+
+                    };
+                    var blogData = 
+                    {
+                        "image": downloadUrl,
+                        "name": fileCompleteName,
+                        "title": title,
+                        "desc": desc,
+                        "uid": user.uid,
+                        "counter": 5000 - counter,
+                        "userName": userName,
+                        "time": time.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true}),
+                        "date": time.toLocaleDateString('en-US', options),                         
+                        };
+                        var newPostRef = databaseRef.push();
+                        
+                        newPostRef.set(blogData, function(err)
+                        {
+                            if(err) 
+                            {
+                                $("#result").attr("class", "alert alert-danger");
+                                $("#result").html(err.message);
+
+                            } 
+                            else 
+                            {
+                                $("#result").attr("class", "alert alert-success");
+                                $("#result").html("blog uploaded successfully");
+
+                                window.open("", "_self");
+                            }
+                            resetForm();
+                        });
+                });
+            }
+        );
+    });
+// ******************* Upload and Save to Firebase Storage and Firrbase Database
+ });
+
+ function resetForm()
+ {
+    $("#main-form")[0].reset();
+    $("#selected-image").fadeOut();
+    $("#upload-progress").html("Completed");
+ }
+
+//  *********************** RETRIEVE AND DISPLAY DATA FROM FIREBASE ***************************
+var user = firebase.auth().currentUser;
+var dbBlogs = firebase.database().ref().child("Blogs").orderByChild("counter");
+        dbBlogs.on("value", function(blogs)
+        {
+            if(blogs.exists()){
+                var blogsHtml = "";
+                blogs.forEach(function(singleBlog){
+                    counter = counter + 1;
+
+                    blogsHtml += "<div class='jumbotron bg-light text-dark border border-dark'>";
+                        blogsHtml += "<div> <img class='img-fluid' width='900px' height='550' src='";
+                            blogsHtml += singleBlog.val().image;
+                        blogsHtml += "'/> </div> <br>";
+
+                        blogsHtml += "<div class='row'>";
+                            blogsHtml += "<div class='col-sm-5'> <p style='color:grey;'>"
+                                        + "Publised by: " + singleBlog.val().userName
+                                        + "</p> </div>" +
+
+                                        "<div class='col-sm-3'> <p style='color:grey;'>"
+                                        + "Time: " + singleBlog.val().time
+                                        + "</p> </div>" +
+                                         
+                                        "<div class='col-sm-4'> <p style='color:grey; margin-left:45px'>"
+                                        + "Date: " + singleBlog.val().date
+                                        + "</p> </div>"
+                                                 ;
+                        blogsHtml += "</div> <br>";
+                        blogsHtml += "</div> <br>";
+                        blogsHtml += "<div style='text-aligh: justify; color: black;'>";
+                            blogsHtml += singleBlog.val().desc;
+                        blogsHtml += "</div> <br>";
+                     blogsHtml += "</div>"
+                });
+
+                $("#blogs").html(blogsHtml);
+            }
+        });
+//  ***********************ENDS HERE-- RETRIEVE AND DISPLAY DATA FROM FIREBASE ***************************
 </script>
-
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  <!-- JQuery -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-
-  <!-- CKEditor 5 -->
-  <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
-
- <!-- Custome Scripts -->
- <script src="../../js/scripts.js"></script>
- <!-- script to firebase -->
- <script src="../../js/auth.js"></script>
-
+<!-- validation and uploading of Post blogs ends -->
+<script src="../../js/auth.js"></script>
 </body>
-
 </html>
