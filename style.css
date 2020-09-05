@@ -660,9 +660,9 @@
                         }
                         
                         ul li a {
-                            color: var(--thickWhite) !important;
+                            color: var(--thickBlack) !important;
                             font-size: 2em;
-                            font-weight: 600
+                            font-weight: 800
                         }
                         
                         .clever-main-menu {
