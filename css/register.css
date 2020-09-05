@@ -13,16 +13,31 @@
     font-family: 'Oxygen', sans-serif;
 }
 
-.main{
-    margin-top: 70px;
+.register-section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+   background-image: url('../design_files/images/loginback.jpg');
 }
-
+.register-section .container {
+   width: 100%;
+   height: auto;
+}
 h1.title { 
    font-size: 50px;
    font-family: 'Passion One', cursive; 
    font-weight: 400; 
 }
-
+.panel-heading {
+   background: #000;
+   padding: 1em;
+}
+.panel-heading h1 {
+   color: #fff;
+   font-size: 2em;
+   font-weight: 700;
+}
 hr{
    width: 10%;
    color: #fff;

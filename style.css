@@ -297,11 +297,17 @@
                             z-index: 1;
                             margin-bottom: 70px;
                             text-align: center;
+                            background: var(--thickBlack);
+                            padding: 2em;
                         }
                         
                         .section-heading h3 {
-                            font-size: 30px;
+                            color: var(--thickWhite);
+                            font-size: 2.5em;
                             margin-bottom: 0;
+                            text-transform: capitalize;
+                            letter-spacing: .1em;
+                            word-spacing: .2em;
                         }
                         
                         .typewrite {
@@ -1870,6 +1876,11 @@
                             padding: 15px 30px;
                             margin-bottom: 0;
                         }
+                        .single-popular-course img {
+                            height: auto;
+                            width: 100%;
+                            height: 270px;
+                        }
                         /* :: 8.0 Upcoming Events */
                         
                         .single-upcoming-events {
@@ -1878,7 +1889,6 @@
                             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
                             border-radius: 6px;
                         }
-                        
                         .single-upcoming-events .events-thumb {
                             display: block;
                             width: 100%;
@@ -1896,6 +1906,9 @@
                             background-color: rgba(0, 0, 0, 0.31);
                             content: '';
                             z-index: 2;
+                        }
+                        .events-thumb img {
+                            height: 250px
                         }
                         
                         .upcoming-events {
@@ -1975,7 +1988,7 @@
                             padding-right: 5%;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .register-now {
                                 -ms-flex-wrap: wrap;
                                 flex-wrap: wrap;
@@ -2004,7 +2017,7 @@
                             border-radius: 6px;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .register-now .register-contact-form {
                                 -webkit-box-flex: 0;
                                 -ms-flex: 0 0 100%;
@@ -2040,7 +2053,7 @@
                             width: 45%;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .register-now .register-now-countdown {
                                 -webkit-box-flex: 0;
                                 -ms-flex: 0 0 100%;
@@ -2088,7 +2101,7 @@
                             display: block;
                         }
                         
-                        @media only screen and(min-width: 992px) and(max-width: 1199px) {
+                        @media(min-width: 992px) and(max-width: 1199px) {
                             .register-now .register-now-countdown .events-cd div {
                                 -webkit-box-flex: 0;
                                 -ms-flex: 0 0 80px;
@@ -2102,7 +2115,7 @@
                             }
                         }
                         
-                        @media only screen and(min-width: 768px) and(max-width: 991px) {
+                        @media(min-width: 768px) and(max-width: 991px) {
                             .register-now .register-now-countdown .events-cd div {
                                 -webkit-box-flex: 0;
                                 -ms-flex: 0 0 60px;
@@ -2116,7 +2129,7 @@
                             }
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .register-now .register-now-countdown .events-cd div {
                                 -webkit-box-flex: 0;
                                 -ms-flex: 0 0 60px;
@@ -2135,11 +2148,13 @@
                             position: relative;
                             z-index: 1;
                         }
-                        
+                        .tutor-thumbnail img {
+                            height: 165px;
+                        }
                         .single-tutors-slides .tutor-thumbnail {
                             width: 165px;
                             height: 165px;
-                            background-color: #000;
+                            background-color: var(--thickBlack);
                             border-radius: 6px;
                             margin: 0 auto 40px;
                             box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
@@ -2245,6 +2260,7 @@
                         .single-blog-area img {
                             display: block;
                             width: 100%;
+                            height: 300px;
                             border-radius: 6px 6px 0 0;
                         }
                         
@@ -2826,14 +2842,16 @@
                             z-index: 1;
                             width: 100%;
                             height: 40px;
-                            background-color: teal;
+                            background-color: var(--teal);
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .bottom-footer-area {
                                 -ms-flex-wrap: wrap;
                                 flex-wrap: wrap;
                                 height: auto;
+                                color: var(--thickBlack);
+                                font-weight: 700;
                             }
                         }
                         
@@ -2876,7 +2894,18 @@
                             color: #ffffff;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        /* @media(max-width: 767px) {
+                            .bottom-footer-area {
+                                -webkit-box-flex: 0;
+                                -ms-flex: 0 0 100%;
+                                flex: 0 0 100%;
+                                max-width: 100%;
+                                width: 100%;
+                                margin-left: auto;
+                                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                            }
+                        } */
+                        @media(max-width: 767px) {
                             .bottom-footer-area .contact-info a {
                                 padding: 0 10px;
                                 font-size: 11px;
@@ -2886,7 +2915,7 @@
                             }
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .bottom-footer-area .contact-info {
                                 -webkit-box-flex: 0;
                                 -ms-flex: 0 0 100%;
@@ -2903,9 +2932,14 @@
                             z-index: 1;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .bottom-footer-area .follow-us {
                                 margin-left: auto;
+                                display: block;
+                            }
+                            .bottom-footer-area .follow-us:hover {
+                                color: var(--lightGradient);
+                                background: var(--thickGradient);
                             }
                         }
                         
@@ -2935,7 +2969,9 @@
                         
                         .bottom-footer-area .follow-us a:hover,
                         .bottom-footer-area .follow-us a:focus {
-                            color: #ffffff;
+                            color: var(--thickGradient);
+                            background: var(--lightGradient);
                         }
+                       
                         /*# sourceMappingURL=style.css.map */
                         /*# sourceMappingURL=style.css.map */

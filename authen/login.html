@@ -3,31 +3,35 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Sevicti Login </title>
-  <!-- <link rel="stylesheet" type="text/css" href="../css/login.css"> -->
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../design_files/css/style.css">
-  
+	<title>Sevicti Login </title>
+	<!-- <link rel="stylesheet" type="text/css" href="../css/login.css"> -->
+	<link rel="stylesheet" href="../style.css">
+	<link rel="stylesheet" href="../design_files/css/style.css">
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
 
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
-<!--Fontawesome CDN-->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-		<!--Bootsrap 4 CDN-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
+	<!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
+
+	<!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
 	<header class="header-area">
 
@@ -41,9 +45,12 @@
 			<!-- Follow Us -->
 			<div class="follow-us">
 				<span>Follow us</span>
-				<a href="https://m.facebook.com/pages/category/school/See-Vision-Computer-Training-Institute-SEVICTI-270049650516785/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-				<a href="https://www.instagram.com/sevictinstitute/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="https://www.twitter.com/sevictinstitute/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				<a
+					href="https://m.facebook.com/pages/category/school/See-Vision-Computer-Training-Institute-SEVICTI-270049650516785/"><i
+						class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="https://www.instagram.com/sevictinstitute/"><i class="fa fa-instagram"
+						aria-hidden="true"></i></a>
+				<a href="https://www.twitter.com/sevictinstitute/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 			</div>
 		</div>
 
@@ -55,7 +62,11 @@
 
 					<!-- Logo -->
 					<div class="img-logo">
-					<a class="text-light nav-brand" href="../index.html">SEVICTI<img src="" alt=""></a>
+						<a class="text-light nav-brand" href="../index.html">
+							<img src="/img/sevicti-img/download.jpeg" alt="">
+							<span>SEVICTI</span>
+						</a>
+
 					</div>
 					<!-- Navbar Toggler -->
 					<div class="classy-navbar-toggler">
@@ -93,17 +104,17 @@
 							</ul>
 
 							<!-- Search Button -->
-							<!-- <div class="search-area">
+							<div class="search-area">
 								<form action="#" method="post">
 									<input type="search" name="search" id="search" placeholder="Search">
 									<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 								</form>
-							</div> -->
+							</div>
 
 							<!-- Register / Login -->
 							<div class="register-login-area">
-								<a href="#" id="register" class="btn">Register</a>
-								<a href="#" id="register" class="btn active">Login</a>
+								<a href="register.html" class="btn">Register</a>
+								<a href="login.html" class="btn active">Login</a>
 							</div>
 
 						</div>
@@ -113,120 +124,119 @@
 			</div>
 		</div>
 	</header>
-	<!-- ##### Header Area End ##### -->
-	
-	<body>
-	<!-- <div class="container">
-		<div class="d-flex justify-content-center h-100">
-			<div class="card">
-				<div class="card-header">
-					<h3>Sign In</h3>
-					<div class="d-flex justify-content-end social_icon">
-						<span><i class="fab fa-facebook-square"></i></span>
-						<span><i class="fab fa-google-plus-square"></i></span>
-						<span><i class="fab fa-twitter-square"></i></span>
-					</div>
-				</div>
-				<div class="card-body">
-					<form>
-						<div class="input-group form-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-							<input type="text" class="form-control" placeholder="username">
-							
-						</div>
-						<div class="input-group form-group">
-							<div class="input-group-prepend">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input type="password" class="form-control" placeholder="password">
-						</div>
-						<div class="row align-items-center remember">
-							<input type="checkbox">Remember Me
-						</div>
-						<div class="form-group">
-							<input type="submit" value="Login" class="btn float-right login_btn">
-						</div>
-					</form>
-				</div>
-				<div class="card-footer">
-					<div class="d-flex justify-content-center links">
-						Don't have an account?<a href="register.html">Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center">
-						<a href="#">Forgot your password?</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	
-	<div class="wrapper" style="background-image: url('../design_files/images/loginback.jpg')">
 
-   
-		<div class="inner">
-			<div class="image-holder">
-				<img src="../design_files/images/login.jpg" alt="">
-			</div>
-			<form action="">
-				<h3>Login</h3>
-				<div class="form-wrapper">
-					<input type="text" name="email" id="email" placeholder="email address" class="form-control">
-					<i class="zmdi zmdi zmdi-email"></i>
+	<div class="wrapper" style="background-image: url('../design_files/images/loginback.jpg')">
+		<div class="container">
+			
+				<div class="row inner">
+				<div class="col-md-6 col-sm-12 image-holder">
+					<img class="img-fluid" src="../design_files/images/login.jpg" alt="">
 				</div>
-				<div class="form-wrapper">
-					<input type="password" name="password" id="password" placeholder="password" class="form-control">
-					<i class="zmdi zmdi zmdi-lock"></i>
-				</div>
-				
-				<div class="form-group container-login100-form-btn">
-					<button type="button" id="login-user">Login
-						<i class="zmdi zmdi-arrow-right"></i>
-					</button>
-				</div>
-				<div class="w-full text-center p-t27 p-b-239">
-				   <span class="text-muted">
-						forgot
-				   </span>
-				   <a href="forgetPassword.html" class="text-dark">username / password</a>
+				<div class="col-md-6 col-sm-12">
+				<form class="" action="">
+					<h3 class="mt-5 mb-4 p-3">Login</h3>
+					<div class="form-wrapper">
+						<input type="text" name="email" id="email" placeholder="email address" class="form-control">
+						<i class="zmdi zmdi zmdi-email"></i>
 					</div>
-				<div class="w-full text-center" style="margin-top: 31%; font-size: 15px;">
-				<a href="register.html" class="text-dark"> Not have an account? Signup</a>
-				</div>
-					</form>
-		</div>
+					<div class="form-wrapper">
+						<input type="password" name="password" id="password" placeholder="password"
+							class="form-control">
+						<i class="zmdi zmdi zmdi-lock"></i>
+					</div>
+
+					<div class="form-group container-login100-form-btn">
+						<button type="button" id="login-user">Login
+							<i class="zmdi zmdi-arrow-right"></i>
+						</button>
+					</div>
+					<div class="w-full text-center p-t27 p-b-239">
+						<span class="text-muted">
+							forgot
+						</span>
+						<a href="forgetPassword.html" class="text-dark">username / password</a>
+					</div>
+					<div class="w-full text-center" style="margin-top: 31%; font-size: 15px;">
+						<a href="register.html" class="text-dark"> Not have an account? Signup</a>
+					</div>
+				</form>
+			</div>
+			</div>
+			</div>
 	</div>
 
+	<footer class="footer-area">
+        <!-- Top Footer Area -->
+        <div class="top-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Footer Logo -->
+                        <div class="footer-logo">
+                            <h1>
+                                <a href="../index.html">
+                                    <img src="/img/sevicti-img/download.jpeg" alt="">
+                                    <span>Sevicti</span>
+                            </h1>
+                        </div>
+                        <!-- Copywrite -->
+                        <p>
+                            <a href="#">
+                                Copyright &copy;
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> All rights reserved
+                                 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!-- ##### All Javascript Script ##### -->
-<!-- jQuery-2.2.4 js -->
-<script src="../js/jquery/jquery-2.2.4.min.js"></script>
-<!-- <script src="../js/bootstrap/popper.min.js"></script> -->
-<!-- Bootstrap js -->
-<!-- <script src="../js/bootstrap/bootstrap.min.js"></script> -->
-<!-- All Plugins js -->
-<script src="../js/plugins/plugins.js"></script>
-<!-- Active js -->
-<script src="../js/active.js"></script>
-<script src="../js/auth.js"></script>
-<script>
-	firebase.auth().onAuthStateChanged(function(user){
-		 if(user)
-		 {
-			 var userID = firebase.auth().currentUser.uid;
-			 firebase.database().ref('Users/' + userID).once('value').then(function(snapshot)
-			 {
-				 if(snapshot.val())
-				 {
-					 window.location.href = "../index-login.html";
-				 } else {
-					  window.location.href = "accountSettings.html";
-				 }
-			 })
-			
-		 }
-	 });
- </script>
+        <!-- Bottom Footer Area -->
+        <div class="bottom-footer-area d-flex justify-content-between align-items-center">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <a href="#"><span>Phone:</span> +237 678 303 0266</a>
+                <a href="#"><span>Email:</span> info@sevicti.com</a>
+            </div>
+                    <!-- Follow Us -->
+            <div class="follow-us">
+                <span>Follow us</span>
+                <a href="https://m.facebook.com/pages/category/school/See-Vision-Computer-Training-Institute-SEVICTI-270049650516785/"><i
+                        class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/sevictinstitute/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com/sevictinstitute/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+           </div>
+        </div>
+    </footer>
+
+	<!-- ##### All Javascript Script ##### -->
+	<!-- jQuery-2.2.4 js -->
+	<script src="../js/jquery/jquery-2.2.4.min.js"></script>
+	<!-- <script src="../js/bootstrap/popper.min.js"></script> -->
+	<!-- Bootstrap js -->
+	<!-- <script src="../js/bootstrap/bootstrap.min.js"></script> -->
+	<!-- All Plugins js -->
+	<script src="../js/plugins/plugins.js"></script>
+	<!-- Active js -->
+	<script src="../js/active.js"></script>
+	<script src="../js/auth.js"></script>
+	<script>
+		firebase.auth().onAuthStateChanged(function (user) {
+			if (user) {
+				var userID = firebase.auth().currentUser.uid;
+				firebase.database().ref('Users/' + userID).once('value').then(function (snapshot) {
+					if (snapshot.val()) {
+						window.location.href = "../index-login.html";
+					} else {
+						window.location.href = "accountSettings.html";
+					}
+				})
+
+			}
+		});
+	</script>
 </body>
+
 </html>
