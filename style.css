@@ -188,7 +188,9 @@
                             padding-top: 100px;
                             padding-bottom: 70px;
                         }
-                        
+                        .typing a {
+                            margin-top: 2em;
+                        }
                         .img-logo img {
                             height: 2.4em;
                             width: 2.7em;
@@ -581,6 +583,9 @@
                             }
                         }
                         
+
+
+
                         @media(max-width: 767px) {
                             .top-header-area .contact-info {
                                 border-bottom: 1px solid #ebebeb;
