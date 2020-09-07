@@ -7,96 +7,89 @@ var firebaseConfig = {
     messagingSenderId: "483945013504",
     appId: "1:483945013504:web:ee3974f3ec5be8796c13e5",
     measurementId: "G-5ZHXEL8H1B"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
-  firebase.auth.Auth.Persistence.LOCAL;
+firebase.auth.Auth.Persistence.LOCAL;
 
-  $("#login-user").click(function()
-  {
-      var email = $("#email").val();
-      var password = $("#password").val();
-      if(email != "" && password != ""){
+$("#login-user").click(function () {
+    var email = $("#email").val();
+    var password = $("#password").val();
+    if (email != "" && password != "") {
         var result = firebase.auth().signInWithEmailAndPassword(email, password);
 
-        result.catch(function(error) {
+        result.catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
             window.alert('Message : ' + errorMessage);
         });
-      } else {
-          window.alert('Please fill out the required fields')
-      }
-  });
-  
-  // BACKEND CODE TO SIGNUP NEW USER to have admin access
-  $("#signup").click(function()
-  {
+    } else {
+        window.alert('Please fill out the required fields')
+    }
+});
+
+// BACKEND CODE TO SIGNUP NEW USER to have admin access
+$("#signup").click(function () {
     var username = $("#username").val();
     var email = $("#email").val();
     var password = $("#password").val();
     var cPassword = $("#confirmPassword").val();
 
-    if(username != "" && email != "" && password != "" && cPassword != "") {
-        
-      if(password == cPassword){
-        var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+    if (username != "" && email != "" && password != "" && cPassword != "") {
 
-        result.catch(function(error){
+        if (password == cPassword) {
+            var result = firebase.auth().createUserWithEmailAndPassword(email, password);
+
+            result.catch(function (error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorCode);
+                console.log(errorMessage);
+                window.alert("message :" + errorMessage);
+            });
+
+        } else {
+            window.alert("Passwords do not match");
+        }
+    } else {
+        window.alert("form is incomplete, Please fill out all the fields");
+
+    }
+});
+
+
+// BACKEND CODE TO RESET PASSWORD
+$("#btn-resetPassword").click(function () {
+    var auth = firebase.auth();
+    var email = $('#email').val();
+
+    if (email != "") {
+        auth.sendPasswordResetEmail(email).then(function () {
+            window.alert("Email has been sent to your email, Please check and verify ");
+        }).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log(errorCode);
             console.log(errorMessage);
-            window.alert("message :" + errorMessage);
-        });
-      
+            window.alert('Message ' + errorMessage);
+        })
     } else {
-        window.alert("Passwords do not match");
-      }
-    } 
-    else{
-      window.alert("form is incomplete, Please fill out all the fields");
-  
-    }
-  });
-
-
-
-//  BACKEND CODE TO RESET PASSWORD
-  $("#btn-resetPassword").click(function(){
-    var auth = firebase.auth();
-    var email = $('#email').val();
-
-    if(email != "") 
-    {
-      auth.sendPasswordResetEmail(email).then(function()
-      {
-        window.alert("Email has been sent to your email, Please check and verify ");
-      })
-      .catch(function(error){
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        window.alert('Message '+ errorMessage);
-      })
-    } else {
-      window.alert("Please write your email first. ");
+        window.alert("Please write your email first. ");
     }
 });
 
 
 // TO LOGOUT USER
-  $("#btn-logout").click(function(){
-      firebase.auth().signOut();
-  });
+$("#btn-logout").click(function () {
+    firebase.auth().signOut();
+});
 
-   // TO UPDATE AND SET USER Account
-   $("#btn-update").click(function(){
+// TO UPDATE AND SET USER Account
+$("#btn-update").click(function () {
     var phone = $("#phone").val();
     var address = $("#address").val();
     var bio = $("#bio").val();
@@ -105,50 +98,81 @@ var firebaseConfig = {
     var country = $("#country").val();
     var gender = $("#gender").val();
 
-    
-  var rootRef = firebase.database().ref().child("users");
+
+    var rootRef = firebase.database().ref().child("users");
+    var userID = firebase.auth().currentUser.uid;
+    var usersRef = rootRef.child(userID);
+
+
+    if (fName != "" && sName != "" && phone != "" && bio != "" && address != "" && country != "" && gender != "") {
+        var userData = {
+            "phone": phone,
+            "address": address,
+            "secondName": sName,
+            "FirstName": fName,
+            "gendere": gender,
+            "bio": bio,
+            "country": country
+        };
+        usersRef.set(userData, function (error) {
+            if (error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+
+                console.log(errorCode);
+                console.log(errorMessage);
+
+                window.alert('Message ' + errorMessage);
+            } else {
+                window.location.href = "../index-login.html";
+            }
+        })
+    } else {
+        window.alert("Form is incomplete, Please fill in all the fields")
+    }
+});
+
+
+// to fill the register course form
+$("#course-submit").click(function () {
+  var studname = $("#stud-name").val();
+  var studemail = $("#stud-email").val();
+  var studphone = $("#stud-phone").val();
+  var studcourse = $("#stud-course").val();
+
+  var courseRef = firebase.database().ref().child("Register-course");
   var userID = firebase.auth().currentUser.uid;
-  var usersRef = rootRef.child(userID);
+  var usersRef = courseRef.child(userID);
 
- 
-     if(fName !="" && sName !="" && phone != "" && bio !="" && address !="" && country != "" && gender !="")
-     {
-       var userData = 
-       {
-         "phone": phone,
-         "address": address,
-         "secondName": sName,
-         "FirstName": fName,
-         "gendere": gender,
-         "bio": bio,
-         "country": country,
-       };
-       usersRef.set(userData, function(error)
-       {
-           if(error) {
-         var errorCode = error.code;
-         var errorMessage = error.message;
- 
-         console.log(errorCode);
-         console.log(errorMessage);
- 
-         window.alert('Message '+ errorMessage);
-           } else {
-             window.location.href = "../index-login.html";
-           }
-       })
-     } else {
-       window.alert("Form is incomplete, Please fill in all the fields")
-     }
- });
+  if (studname != "" && studemail != "" && studphone != "" && studcourse != "") {
+    var studentCourse = {
+      "studname":studname,
+      "studemail":studemail,
+      "studphone":studphone,
+      "studcourse":studcourse
+    };
+    usersRef.set(studentCourse, function (error) {
+      if (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
 
- function switchView(view)
-{
-  $.get({
-    url:view,
-    cache:false,
-  })
-  .then(function(data){
-    $("#container").html(data);
-  })
+        console.log(errorCode);
+        console.log(errorMessage);
+
+        window.alert('Message' + errorMessage);
+      } else {
+        window.location.href = "../index.html";
+      }
+    })
+
+  } else {
+    window.alert("Form is incomplete, Please fill all the input")
+  }
+})
+
+
+function switchView(view) {
+    $.get({url: view, cache: false}).then(function (data) {
+        $("#container").html(data);
+    })
 }
