@@ -754,7 +754,14 @@
                             cursor: pointer;
                             outline: none;
                         }
+
+                        .instructor-thumb img {
+                            height: 100% auto;
+                            max-width: 100%;
+                            object-fit: fill;
+                        }
                         
+
                         .classy-navbar {
                             background-color: teal;
                         }
@@ -1566,7 +1573,7 @@
                             box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .clever-members .all-instructors {
                                 padding: 30px 30px 0;
                             }
@@ -1602,7 +1609,7 @@
                             margin-bottom: 5px;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .clever-members .all-instructors .single-instructor .instructor-info h5 {
                                 font-size: 14px;
                             }
@@ -1639,19 +1646,19 @@
                             margin-bottom: 0;
                         }
                         
-                        @media only screen and(min-width: 992px) and(max-width: 1199px) {
+                        @media(min-width: 992px) and(max-width: 1199px) {
                             .instructors-video h2 {
                                 font-size: 50px;
                             }
                         }
                         
-                        @media only screen and(min-width: 768px) and(max-width: 991px) {
+                        @media(min-width: 768px) and(max-width: 991px) {
                             .instructors-video h2 {
                                 font-size: 42px;
                             }
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .instructors-video h2 {
                                 font-size: 24px;
                             }
@@ -1709,11 +1716,22 @@
                             margin-bottom: 5px;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .single-instructor .instructor-info h5 {
                                 font-size: 14px;
                             }
                         }
+                        @media(min-width: 567px) {
+                            .tutor-thumbnail img {
+                                width: 100%;
+                                height: 200px;
+                            }
+                            .instructor-thumb img {
+                                width: 100%;
+                                height: 200px;
+                            }
+                        }
+
                         
                         .single-instructor .instructor-info span {
                             font-weight: 400;
@@ -1753,7 +1771,7 @@
                             color: rgba(0, 0, 0, 0.3);
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .sidebar-widget .features-list li h6 {
                                 font-size: 14px;
                             }
@@ -1797,7 +1815,7 @@
                             color: rgba(0, 0, 0, 0.35);
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .sidebar-widget .single--courses .content h5 {
                                 font-size: 14px;
                             }
