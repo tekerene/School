@@ -13,14 +13,17 @@
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap / 4.0 .0 / css / bootstrap.min.css " integrity=" sha384 - Gn5384xqQ1aoWXA + 058 RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW / dAiS6JXm " crossorigin=" anonymous "> -->
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity = "sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin = "anonymous" > </script> < script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity = "sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin = "anonymous" > </script> -->
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-
+    
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
@@ -28,7 +31,26 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-storage.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
   https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+    
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+  <script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyDi7GpvzEDSU1cUHYQzId9paJ4Egda4RZQ",
+    authDomain: "sevicti-fba28.firebaseapp.com",
+    databaseURL: "https://sevicti-fba28.firebaseio.com",
+    projectId: "sevicti-fba28",
+    storageBucket: "sevicti-fba28.appspot.com",
+    messagingSenderId: "483945013504",
+    appId: "1:483945013504:web:ee3974f3ec5be8796c13e5",
+    measurementId: "G-5ZHXEL8H1B"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    firebase.auth.Auth.Persistence.LOCAL;
+
+    </script>
 </head>
 
 <body>
@@ -129,7 +151,7 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Hero Area Start ##### -->
-    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(img/bg-img/pic1.jpeg);">
+    <section class="hero-area bg-img bg-overlay-2by5" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(img/sevicti-img/student.png);">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12">
@@ -557,7 +579,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button type="submit" id="course-submit" class="btn clever-btn w-100">Register Course</button>
+                                        <button type="button" id="course-submit" class="btn clever-btn w-100">Register Course</button>
                                     </div>
                                 </div>
                             </form>
@@ -675,7 +697,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6">
                     <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="250ms">
-                        <img src="img/bg-img/course_6.jpg" alt="">
+                        <img class="img-fluid" src="img/bg-img/course_6.jpg" alt="blog-web-dev">
                         <!-- Blog Content -->
                         <div class="blog-content">
                             <a href="#" class="blog-headline">
@@ -696,7 +718,7 @@
                 <!-- Single Blog Area -->
                 <div class="col-12 col-md-6">
                     <div class="single-blog-area mb-100 wow fadeInUp" data-wow-delay="500ms">
-                        <img src="img/bg-img/bg1.png" alt="">
+                        <img class="img-fluid" src="img/bg-img/bg1.png" alt="blog-job-237">
                         <!-- Blog Content -->
                         <div class="blog-content">
                             <a href="#" class="blog-headline">
@@ -728,7 +750,7 @@
                         <div class="footer-logo">
                             <h1>
                                 <a href="index.html">
-                                    <!-- <img src="/img/sevicti-img/download.jpeg" alt=""> -->
+                                    <img src="/img/sevicti-img/download.jpeg" alt="">
                                     <span>Sevicti</span>
                             </h1>
                         </div>
@@ -778,7 +800,18 @@
     <script src="js/typewrite.js"></script>
     <script src="js/active.js"></script>
     <script src="./js/auth.js"></script>
-
+    <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                var userID = firebase.auth().currentUser.uid;
+                firebase.database().ref('Users/' + userID).once('value').then(function (snapshot) {
+                    if (snapshot.val()) {
+                        window.location.href = "../courses.html";
+                    }
+                })
+            }
+        });
+    </script>
 </body>
 
 </html>

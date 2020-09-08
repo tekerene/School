@@ -140,7 +140,7 @@ $("#course-submit").click(function () {
   var studphone = $("#stud-phone").val();
   var studcourse = $("#stud-course").val();
 
-  var courseRef = firebase.database().ref().child("Register-course");
+  var courseRef = firebase.database().ref().child("users");
   var userID = firebase.auth().currentUser.uid;
   var usersRef = courseRef.child(userID);
 
@@ -161,7 +161,7 @@ $("#course-submit").click(function () {
 
         window.alert('Message' + errorMessage);
       } else {
-        window.location.href = "../index.html";
+        window.location.href = "../course.html";
       }
     })
 

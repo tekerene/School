@@ -369,6 +369,7 @@
                             background-position: center center;
                             background-size: cover;
                             background-repeat: no-repeat;
+                            opacity: 1.5;
                         }
                         
                         .bg-white {
@@ -756,12 +757,10 @@
                         }
 
                         .instructor-thumb img {
-                            height: 100% auto;
-                            max-width: 100%;
-                            object-fit: fill;
+                            height: 137px !important;
+                            max-width: 108%;
+                            object-fit: cover;
                         }
-                        
-
                         .classy-navbar {
                             background-color: teal;
                         }
@@ -1720,6 +1719,10 @@
                             .single-instructor .instructor-info h5 {
                                 font-size: 14px;
                             }
+                            .instructor-thumb img {
+                                width: 100%;
+                                height: 200px;
+                            }
                         }
                         @media(min-width: 567px) {
                             .tutor-thumbnail img {
@@ -2325,9 +2328,14 @@
                             margin-right: 10px;
                         }
                         
-                        @media only screen and(max-width: 767px) {
+                        @media(max-width: 767px) {
                             .single-blog-area .blog-content .meta a {
                                 font-size: 12px;
+                            }
+                            .single-blog-area img {
+                                width: 100%;
+                                height: 200px;
+                                border-radius: 6px 6px 0 0;
                             }
                         }
                         
